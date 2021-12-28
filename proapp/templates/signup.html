@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Hello, world!</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-xl-12" style="text-align: center;padding: 20px;"><h1>ONE2ONE</h1></div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4"></div>
+        <div class="col-xl-4" style="border: 1px solid grey;padding: 20px;text-align: center;">
+            <h2>Create account</h2><br>
+            <form action="/signup/" method="POST">
+                {% csrf_token %}
+                <input class="form-control" name="name" id="fnm" type="text" placeholder="Your name"><br>
+                <p id="pfnm"></p>
+                <input class="form-control" name="mobile" id="mbl" type="text" placeholder="Mobile number"><br>
+                <p id="pmbl"></p>
+                <input class="form-control" name="mail" id="eml" type="text" placeholder="E-mail (optional)"><br>
+                <p id="peml"></p>
+                <input class="form-control" name="pword" id="pwd" type="password" placeholder="Enter Password"><br>
+                <input class="form-control" name="pword2" id="pw2" type="password" placeholder="Re-enter Password"><br>
+                <p id="ppwd"></p>
+                <input type="submit" class="btn btn-primary" value="Sign-up" onclick="return sbmt()"><br><br>
+            </form>
+            <font>Already have an account? <a href="/signin/">Sign-In</a></font>
+        </div>
+        <div class="col-xl-4"></div>
+    </div><hr>
+    <div class="row">
+        <div class="col-xl-4"></div>
+        <div class="col-xl-4"></div>
+        <div class="col-xl-4">
+            <b>FOLLOW US ON</b><br>
+            <a href=""><i class="fa fa-phone" style="color: grey;"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href=""><i class="fa fa-facebook" style="color: grey;"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href=""><i class="fa fa-instagram" style="color: grey;"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href=""><i class="fa fa-envelope" style="color: grey;"></i></a>
+        </div>
+    </div>
+        <script>
+            function sbmt(){alert('{{msg}}')
+                name1=document.getElementById('fnm').value
+                phone=document.getElementById('mbl').value
+                email=document.getElementById('eml').value
+                pword=document.getElementById('pwd').value
+                pword2=document.getElementById('pw2').value
+                if(name1==""){
+                    document.getElementById('fnm').focus()
+                    document.getElementById('fnm').style.borderColor="red"
+                    document.getElementById('pfnm').innerHTML="*please enter your name*"
+                    document.getElementById('pfnm').style.color="red"
+                    return false
+                }
+                else if(phone==""){
+                    document.getElementById('mbl').focus()
+                    document.getElementById('mbl').style.borderColor="red"
+                    document.getElementById('pmbl').innerHTML="*please enter your number*"
+                    document.getElementById('pmbl').style.color="red"
+                    return false
+                }
+                else if(email==""){
+                    document.getElementById('eml').focus()
+                    document.getElementById('eml').style.borderColor="red"
+                    document.getElementById('peml').innerHTML="*please enter your email*"
+                    document.getElementById('peml').style.color="red"
+                    return false
+                }
+                else if(pword==""){
+                    document.getElementById('pwd').focus()
+                    document.getElementById('pwd').style.borderColor="red"
+                    document.getElementById('ppwd').innerHTML="*please enter a password*"
+                    document.getElementById('ppwd').style.color="red"
+                    return false
+                }
+                else if(pword!=pword2){
+                    document.getElementById('pwd').style.borderColor="red"
+                    document.getElementById('pw2').style.borderColor="red"
+                    document.getElementById('ppwd').innerHTML="*passwords does not match*"
+                    document.getElementById('ppwd').style.color="red"
+                    return false
+                }
+                else{
+                    return true
+                }
+            }
+        </script>
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+-->
+    
+    
+</body>
+</html>

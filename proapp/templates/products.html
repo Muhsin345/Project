@@ -1,0 +1,120 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Products</title>
+</head>
+<body class="bg">
+    <nav class="navbar fixed-top navbar-light" style="background-color: rgb(205, 224, 255);">
+        <!-- <nav class="navbar navbar-light bg-light"> -->
+            <a href="/products/" class="navbar-brand"><b>ONE-TO-ONE</b></a>
+            <form class="form-inline" >
+                <input class="form-control" type="search" placeholder="Search here" aria-label="Search">
+                <button class="btn btn-outline-primary mr-4" style="margin: 1px 0 0 0;">FIND</button>
+                <button class="btn btn-outline-primary mr-4" style="margin: 1px 0 0 0;">SETTINGS</button>
+                <button class="btn btn-outline-primary mr-4" style="margin: 1px 0 0 0;">SELL</button>
+                <button class="btn btn-outline-primary" style="margin: 1px 0 0 0;">LOGOUT</button>
+                <font style="color: white;font-size: 25px;">{{usr.Name}}</font>
+            </form>
+        <!-- </nav> -->
+    </nav>
+    <div class="navbar fixed-bottom navbar-light" class="row" style="background-color: rgb(205, 224, 255);">
+        <div class="col-xl-4"></div>
+        <div class="col-xl-4"></div>
+        <div class="col-xl-4" style="text-align: right;">
+            <b>FOLLOW US ON</b><br>
+            <a href=""><i class="fa fa-phone" style="color: rgb(0, 0, 0);"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href=""><i class="fa fa-facebook" style="color: rgb(0, 0, 0);"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href=""><i class="fa fa-instagram" style="color: rgb(0, 0, 0);"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href=""><i class="fa fa-envelope" style="color: rgb(0, 0, 0);"></i></a>
+        </div>
+    </div>
+    <p>{{usr.Name}}</p>
+    
+    <!-- <div class="main">
+        <a href="">
+            <div class="d1"><img src="{% static 'images/logos/apple.png' %}" alt=""></div>
+        </a>    
+        <a href="">
+            <div class="d1"><img src="{% static 'images/logos/mi.png' %}" alt=""></div>
+        </a>
+        <a href="">
+            <div class="d1"><img src="{% static 'images/logos/samsun.png' %}" alt=""></div>
+        </a>
+        <a href="">
+            <div class="d1"><img src="{% static 'images/logos/oneplu.png' %}" alt=""></div>
+        </a>
+        <a href="">    
+            <div class="d1"><img src="{% static 'images/logos/vivo.png' %}" alt=""></div>
+        </a>
+        <a href="">
+            <div class="d1"><img src="{% static 'images/logos/oppo.png' %}" alt=""></div>
+        </a>
+        <a href="">
+            <div class="d1"><img src="{% static 'images/logos/huawei.png' %}" alt=""></div>
+        </a>
+    </div>
+    <div class="sec">
+        <div>
+            <img class="one" src="{% static 'images/logos/mibnr.jpg' %}" alt="">
+        </div>
+    </div>
+    <div class="ifn">
+        <div><img class="ipn" src="{% static 'images/logos/mini.png' %}" alt="">
+            <h2>iPhone 12 mini</h2>
+            <h3>Rs 53,999</h3>
+            <button>Buy Now</button>
+            <button>Add to Cart</button>
+        </div>
+        <div><img class="ipn" src="{% static 'images/logos/nrml.png' %}" alt="">
+            <h2>iPhone 12</h2>
+            <h3>Rs 79,599</h3>
+            <button>Buy Now</button>
+            <button>Add to Cart</button>
+        </div>
+        <div><img class="ipn" src="{% static 'images/logos/pro.png' %}" alt="">
+            <h2>iPhone 12 Pro</h2>
+            <h4>Currently not available</h4>
+            <button>Remind me</button>
+        </div>
+    </div>
+    <div class="smsng">
+        <div><img class="ipn2" src="{% static 'images/smsng/m314gb.png' %}" alt="">
+            <h2>Samsung Galaxy M31<h3>4GB RAM - 64GB</h3></h2>
+            <h3>Rs 14,999</h3>
+            <button>Buy Now</button>
+            <button>Add to Cart</button>
+        </div>
+        <div><img class="ipn2" src="{% static 'images/smsng/m316gb.png' %}" alt="">
+            <h2>Samsung Galaxy M31<h3>6GB RAM - 128GB</h3></h2>
+            <h3>Rs 16,999</h3>
+            <button>Buy Now</button>
+            <button>Add to Cart</button>
+        </div>
+        <div><img class="ipn" src="{% static 'images/smsng/m21.png' %}" alt="">
+            <h2>Samsung Galaxy M21<h3>4GB RAM - 64GB</h3></h2>
+            <h3>Rs 12,999</h3>
+            <button>Buy Now</button>
+            <button>Add to Cart</button>
+        </div>
+        <div><img class="ipn2" src="{% static 'images/smsng/m32.png' %}" alt="">
+            <h2>Samsung Galaxy M32<h3>6GB RAM - 128GB</h3></h2>
+            <h3>Rs 20,999</h3>
+            <button>Buy Now</button>
+            <button>Add to Cart</button>
+        </div>
+    </div> -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+</body>
+</html>
